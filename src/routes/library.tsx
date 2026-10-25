@@ -8,9 +8,9 @@ import { useApp } from "@/lib/store";
 export const Route = createFileRoute("/library")({
   head: () => ({
     meta: [
-      { title: "My library — AI Education Assistant" },
+      { title: "My library — NEXIUM" },
       { name: "description", content: "Your saved lessons, notes, quizzes and flashcards, stored in this browser." },
-      { property: "og:title", content: "My library — AI Education Assistant" },
+      { property: "og:title", content: "My library — NEXIUM" },
       { property: "og:description", content: "Saved lessons stored in this browser." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

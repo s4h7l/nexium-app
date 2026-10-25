@@ -11,9 +11,9 @@ import { useApp } from "@/lib/store";
 export const Route = createFileRoute("/tutor")({
   head: () => ({
     meta: [
-      { title: "Ask your tutor — AI Education Assistant" },
+      { title: "Ask your tutor — NEXIUM" },
       { name: "description", content: "Chat with a Gemini-powered tutor at your level and in your language." },
-      { property: "og:title", content: "Ask your tutor — AI Education Assistant" },
+      { property: "og:title", content: "Ask your tutor — NEXIUM" },
       { property: "og:description", content: "A patient Gemini tutor for your follow-up questions." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

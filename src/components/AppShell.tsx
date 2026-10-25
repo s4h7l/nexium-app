@@ -23,8 +23,8 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
           <BookOpen className="h-4.5 w-4.5" aria-hidden />
         </span>
         <span className="leading-tight">
-          <span className="block font-serif text-[15px] font-semibold text-foreground">AI Education</span>
-          <span className="block text-xs text-muted-foreground">Assistant</span>
+          <span className="block font-serif text-[15px] font-semibold tracking-wide text-foreground">NEXIUM</span>
+          <span className="block text-xs text-muted-foreground">AI learning studio</span>
         </span>
       </Link>
       <button

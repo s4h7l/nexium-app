@@ -7,9 +7,9 @@ import { useApp } from "@/lib/store";
 export const Route = createFileRoute("/preferences")({
   head: () => ({
     meta: [
-      { title: "Learning preferences — AI Education Assistant" },
+      { title: "Learning preferences — NEXIUM" },
       { name: "description", content: "Choose your default level, length and language for lessons and tutor chat." },
-      { property: "og:title", content: "Learning preferences — AI Education Assistant" },
+      { property: "og:title", content: "Learning preferences — NEXIUM" },
       { property: "og:description", content: "Set how you like to learn." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

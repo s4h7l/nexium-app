@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { BookOpen, Library, Menu, MessageCircle, Plus, Settings2, Sparkle } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { BookOpen, Library, Menu, MessageCircle, Moon, Plus, Settings2, Sparkle, Sun } from "lucide-react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { useApp } from "@/lib/store";
 
@@ -93,6 +93,34 @@ function ConnectionStatus() {
   );
 }
 
+function ThemeToggle() {
+  const [dark, setDark] = useState(false);
+  useEffect(() => {
+    setDark(document.documentElement.classList.contains("dark"));
+  }, []);
+  const toggle = () => {
+    const next = !dark;
+    setDark(next);
+    document.documentElement.classList.toggle("dark", next);
+    try {
+      localStorage.setItem("nexium.theme", next ? "dark" : "light");
+    } catch {
+      /* ignore */
+    }
+  };
+  return (
+    <button
+      onClick={toggle}
+      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+      title={dark ? "Light mode" : "Dark mode"}
+      className="rounded-full border border-border bg-card p-2 text-foreground transition hover:bg-accent focus-visible:outline-2 focus-visible:outline-ring"
+    >
+      {dark ? <Sun className="h-4 w-4" aria-hidden /> : <Moon className="h-4 w-4" aria-hidden />}
+    </button>
+  );
+}
+
+
 export function AppShell({ children, crumb }: { children: ReactNode; crumb: string }) {
   const [open, setOpen] = useState(false);
   return (
@@ -125,7 +153,10 @@ export function AppShell({ children, crumb }: { children: ReactNode; crumb: stri
               <span className="font-medium text-foreground">{crumb}</span>
             </nav>
           </div>
-          <ConnectionStatus />
+          <div className="flex items-center gap-2">
+            <ConnectionStatus />
+            <ThemeToggle />
+          </div>
         </header>
         <main id="main" className="mx-auto w-full max-w-[1180px] flex-1 px-4 py-8 sm:px-8 lg:py-10">
           {children}

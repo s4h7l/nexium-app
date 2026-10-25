@@ -116,7 +116,7 @@ export const lessonJsonSchema = {
 export function parseLessonOutput(raw: string): LessonContent | null {
   let text = raw.trim();
   const fence = text.match(/^```(?:json)?\s*([\s\S]*?)\s*```$/);
-  if (fence) text = fence[1];
+  if (fence) text = fence[1] ?? text;
   try {
     const result = lessonSchema.safeParse(JSON.parse(text));
     return result.success ? result.data : null;

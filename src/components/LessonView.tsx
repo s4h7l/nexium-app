@@ -218,7 +218,7 @@ export function Quiz({ lesson }: { lesson: Lesson }) {
 export function Flashcards({ lesson }: { lesson: Lesson }) {
   const [i, setI] = useState(0);
   const [flipped, setFlipped] = useState(false);
-  const card = lesson.flashcards[i];
+  const card = lesson.flashcards[i]!;
   const go = (d: number) => {
     setFlipped(false);
     setI((x) => (x + d + lesson.flashcards.length) % lesson.flashcards.length);

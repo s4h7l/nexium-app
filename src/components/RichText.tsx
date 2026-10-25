@@ -30,7 +30,7 @@ export function RichText({ text }: { text: string }) {
   const chunks = text.split(/```(\w*)\n?([\s\S]*?)```/g);
   const out: React.ReactNode[] = [];
   for (let i = 0; i < chunks.length; i += 3) {
-    const prose = chunks[i];
+    const prose = chunks[i] ?? "";
     prose
       .split(/\n\s*\n/)
       .map((b) => b.trim())
@@ -53,7 +53,7 @@ export function RichText({ text }: { text: string }) {
           );
         }
       });
-    if (i + 2 < chunks.length) out.push(<CodeBlock key={`c${i}`} lang={chunks[i + 1]} code={chunks[i + 2].trimEnd()} />);
+    if (i + 2 < chunks.length) out.push(<CodeBlock key={`c${i}`} lang={chunks[i + 1] ?? ""} code={(chunks[i + 2] ?? "").trimEnd()} />);
   }
   return <div className="space-y-3 leading-relaxed text-foreground/85">{out}</div>;
 }

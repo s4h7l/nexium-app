@@ -14,7 +14,7 @@ export async function postJson<T>(url: string, body: unknown, signal?: AbortSign
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
-      signal,
+      signal: signal ?? null,
     });
   } catch {
     if (signal?.aborted) throw new ClientError("Cancelled.", "cancelled");

@@ -21,12 +21,12 @@ export async function callGemini(opts: {
   jsonSchema?: Record<string, unknown>;
   signal?: AbortSignal;
 }): Promise<string> {
-  const key = process.env.LOVABLE_API_KEY;
+  const key = process.env["LOVABLE_API_KEY"];
   if (!key) throw new AiError(503, "Gemini is not connected on the server yet.", "missing_key");
 
   const body: Record<string, unknown> = { model: GEMINI_MODEL, messages: opts.messages, stream: true };
   if (opts.jsonSchema) {
-    body.response_format = {
+    body["response_format"] = {
       type: "json_schema",
       json_schema: { name: "lesson", strict: true, schema: opts.jsonSchema },
     };
@@ -42,7 +42,7 @@ export async function callGemini(opts: {
         "X-Lovable-AIG-SDK": "fetch",
       },
       body: JSON.stringify(body),
-      signal: opts.signal,
+      signal: opts.signal ?? null,
     });
   } catch (e) {
     if (opts.signal?.aborted) throw new AiError(499, "Request cancelled.", "cancelled");

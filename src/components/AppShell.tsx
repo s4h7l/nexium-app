@@ -20,9 +20,12 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <div className="flex h-full flex-col gap-6 px-4 py-6">
       <Link to="/" onClick={onNavigate} className="flex items-center gap-2.5 rounded-md px-2 focus-visible:outline-2 focus-visible:outline-ring">
-        <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground">
-          <BookOpen className="h-4.5 w-4.5" aria-hidden />
-        </span>
+        <img
+          src={logoMark}
+          alt=""
+          aria-hidden
+          className="h-9 w-9 rounded-lg object-contain dark:[filter:brightness(0)_invert(1)]"
+        />
         <span className="leading-tight">
           <span className="block font-serif text-[15px] font-semibold tracking-wide text-foreground">NEXIUM</span>
           <span className="block text-xs text-muted-foreground">AI learning studio</span>

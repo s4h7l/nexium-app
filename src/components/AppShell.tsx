@@ -1,4 +1,5 @@
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
+import logoFull from "@/assets/nexium-logo-themed.png";
 import { useQuery } from "@tanstack/react-query";
 import { BookOpen, Library, Menu, MessageCircle, Moon, Plus, Settings2, Sparkle, Sun } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
@@ -18,14 +19,17 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
   const { pathname } = useLocation();
   return (
     <div className="flex h-full flex-col gap-6 px-4 py-6">
-      <Link to="/" onClick={onNavigate} className="flex items-center gap-2.5 rounded-md px-2 focus-visible:outline-2 focus-visible:outline-ring">
-        <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground">
-          <BookOpen className="h-4.5 w-4.5" aria-hidden />
-        </span>
-        <span className="leading-tight">
-          <span className="block font-serif text-[15px] font-semibold tracking-wide text-foreground">NEXIUM</span>
-          <span className="block text-xs text-muted-foreground">AI learning studio</span>
-        </span>
+      <Link
+        to="/"
+        onClick={onNavigate}
+        aria-label="NEXIUM — AI learning studio, go to home"
+        className="block px-1 focus-visible:outline-2 focus-visible:outline-ring"
+      >
+        <img
+          src={logoFull}
+          alt="NEXIUM — AI learning studio"
+          className="w-full max-w-[200px] dark:[filter:brightness(0)_invert(1)]"
+        />
       </Link>
       <button
         onClick={() => {

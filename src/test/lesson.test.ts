@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { parseLessonOutput, scoreQuiz, generateRequestSchema, lessonToMarkdown } from "@/lib/lesson";
 import { SAMPLES } from "@/lib/samples";
 
-const valid = SAMPLES[0];
+const valid = SAMPLES[0]!;
 
 describe("quiz scoring", () => {
   it("returns null until every question is answered", () => {

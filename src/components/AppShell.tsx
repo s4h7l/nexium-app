@@ -85,7 +85,7 @@ function ConnectionStatus() {
     <span
       role="status"
       title={data?.model}
-      className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs text-muted-foreground"
+      className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-border bg-card px-3 py-1 text-xs text-muted-foreground"
     >
       <span className={`h-2 w-2 rounded-full ${isLoading ? "bg-muted-foreground/40" : ok ? "bg-success" : "bg-destructive"}`} aria-hidden />
       {label}

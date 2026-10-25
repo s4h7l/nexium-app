@@ -26,7 +26,7 @@ export const Route = createFileRoute("/api/tutor")({
             messages: [
               {
                 role: "system",
-                content: `You are a patient, accurate tutor in AI Education Assistant. Reply in ${language}, pitched at a ${level} learner. Explain step by step, check understanding with a short follow-up question when useful, and keep answers focused (under ~300 words unless asked). Use plain text; bullet lines start with '- '; put code in triple-backtick blocks.`,
+                content: `You are a patient, accurate tutor in NEXIUM. Reply in ${language}, pitched at a ${level} learner. Explain step by step, check understanding with a short follow-up question when useful, and keep answers focused (under ~300 words unless asked). Use plain text; bullet lines start with '- '; put code in triple-backtick blocks.`,
               },
               ...history,
             ],

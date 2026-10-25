@@ -150,7 +150,7 @@ const LEVEL_GUIDE: Record<Level, string> = {
 
 export function buildLessonPrompt(req: GenerateRequest) {
   const system = [
-    "You are AI Education Assistant, a careful, accurate teacher.",
+    "You are NEXIUM, a careful, accurate teacher.",
     `Write ALL natural-language text (title, summary, headings, bodies, takeaways, questions, options, explanations, flashcards) in ${req.language}. Code stays in its programming language; technical terms may add the English term in brackets.`,
     `Format: ${req.format}. ${FORMAT_GUIDE[req.format]}`,
     `Level: ${req.level}. ${LEVEL_GUIDE[req.level]}`,

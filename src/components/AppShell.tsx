@@ -1,4 +1,5 @@
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
+import logoMark from "@/assets/nexium-mark.png";
 import { useQuery } from "@tanstack/react-query";
 import { BookOpen, Library, Menu, MessageCircle, Moon, Plus, Settings2, Sparkle, Sun } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
